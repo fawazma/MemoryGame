@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(-45deg, #1b3a1b, #5fb77a, #22791c, #ef5959);
+    height: 100%;
+    width: 100%;
+    background-size: 400% 400%;
+    font-family: courier;
+}
+
+.card-list {
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.card-board {
+    background: linear-gradient(-45deg, #1b3a1b, #5fb77a, #bb7878, #ef5959)
+}
+
+.card-board .card{
+    border-radius: 0;
+    background-color: #2e3d49;
+}
+
+.card {
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    border: none;
+}
+
+.card-list .card {
+    width: 20%;
+    transition: 0.5s;
+}
+
+.card-list .card.open {
+    transform: rotateY(180deg);
+    transition: 0.4s;
+}
+
+.card.matched {
+    animation-name: bounceIn;
+    animation-duration: 450ms;
+    animation-fill-mode: both;
+    background-color: #02ccba;
+}
+
+.card.matched img{
+    transform: none !important;
+}
+
+.card-list .card.open img {
+    opacity: 1;
+}
+
+.card-list .card img {
+    width: 100%;
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+.game-rate {
+    display: inherit;
+    margin-top: 5px;
+}
+
+.game-rate ul {
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+}
+
+.game-rate ul li {
+    list-style-type: none;
+    display: inline-block;
+    color: #ffcd00;
+}
+
+.game-reset {
+    text-align: right;
+}
+
+.empty-star .fas {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #ffcd00;
+    color: transparent;
+    transition: color 0.3s;
+}
+
+.move_count {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.game-panel {
+    margin-bottom: 8px;
+}
+
+.timer {
+    color: #fdd200;
+}
+
+@media (max-width : 600px) {
+    .card-list {
+        padding: 10px 10px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .game-reset,
+    .game-panel {
+        text-align: center
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(0.89);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
