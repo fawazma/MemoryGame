@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="assets/images/logotab.png"/>
+    <title>Card Memory Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <!-- sweet alert -->
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+
+    <!-- custom style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <h1 class="text-center title">MEMORY GAME</h1>
+
+    <div class="container" id="app">
+
+        <div class="row justify-content-md-center">
+
+            <div class="col-md-7">
+                <div class="timer text-center font-weight-bold">
+                    <i class="far fa-clock"></i>
+                    <span>{{ timer }}</span>
+                    <i class="far fa-clock"></i>
+                </div>
+                <div class="row game-panel">
+                    <div class="col-sm-6">
+                        <div class="game-rate">
+                            <ul>
+                                <li><i class="fas fa-star"></i></li>
+                                <li v-bind:class="[moved > 20 ? 'empty-star' : '']"><i class="fas fa-star"></i></li>
+                                <li v-bind:class="[moved > 10 ? 'empty-star' : '']"><i class="fas fa-star"></i></li>
+                            </ul>
+                            <p class="move_count"><span>{{ moved }}</span><span v-if="moved <= 1"> Move</span><span
+                                    v-if="moved > 1"> Moves</span></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 game-reset">
+                        <button class="btn btn-sm btn-success" v-on:click="restart()"><i class="fas fa-sync-alt"></i>
+                            Restart (ESC)</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body card-board">
+                        <div class="row card-list">
+                            <div class="card" v-for="card,index in cardimages" v-if="index < 4">
+                                <img v-bind:src="'assets/images/' + card + '.png'" alt=""
+                                    v-on:click="flip(card, $event)">
+                            </div>
+                        </div>
+
+                        <div class="row card-list">
+                            <div class="card" v-for="card,index in cardimages" v-if="index > 3 && index < 8">
+                                <img v-bind:src="'assets/images/' + card + '.png'" alt=""
+                                    v-on:click="flip(card, $event)">
+                            </div>
+                        </div>
+
+                        <div class="row card-list">
+                            <div class="card" v-for="card,index in cardimages" v-if="index > 7 && index < 12">
+                                <img v-bind:src="'assets/images/' + card + '.png'" alt=""
+                                    v-on:click="flip(card, $event)">
+                            </div>
+                        </div>
+
+                        <div class="row card-list">
+                            <div class="card" v-for="card,index in cardimages" v-if="index > 11 && index < 16">
+                                <img v-bind:src="'assets/images/' + card + '.png'" alt=""
+                                    v-on:click="flip(card, $event)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/game.js"></script>
+
+</body>
+
+</html>
