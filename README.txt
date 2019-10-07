@@ -17,18 +17,18 @@ game.js
 sweetalert2.all.min (Generated)
 
 fontawesome:
-*Generates files
+*Generated files
 
 img:
-1.png
-2.png
-3.png
-4.png
-5.png
-6.png
-7.png
-8.png
-logotab.png
+1.png (Palm Tree)
+2.png (Makkah)
+3.png (Al Faisaliyah Centre)
+4.png (MBS)
+5.png (Madain Saleh)
+6.png (Camels)
+7.png (Kingdom Centre)
+8.png (Arabic Coffee)
+logotab.png (Brain)
 
 README.txt
 
