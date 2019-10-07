@@ -19,7 +19,7 @@ sweetalert2.all.min (Generated)
 fontawesome:
 *Generated files
 
-img:
+images:
 1.png (Palm Tree)
 2.png (Makkah)
 3.png (Al Faisaliyah Centre)
