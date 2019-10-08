@@ -30,6 +30,9 @@ var app = new Vue({
             }
             if (this.reseted) {
                 target = event.target;
+                if($(target).parent().hasClass('open')){
+                    return false;
+                }
                 if (this.fliped) {
                     this.target2 = $(target);
                     this.temp2 = id;
@@ -38,6 +41,7 @@ var app = new Vue({
                     this.target1 = $(target);
                     this.temp1 = id;
                 }
+
                 $(target).parent().addClass('open');        // flip selected card
                 if (this.temp1 == this.temp2) {            // match two card if user select same image
                     this.moved += 1;
